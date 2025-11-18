@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/stylesheet.css">
+    <link rel="stylesheet" href="CSS/dark-mode.css">
+    <script src="JS/script.js" defer></script>
     <title>BOOKCASE</title>
 </head>
 <body>
@@ -17,16 +19,34 @@
                 <div class="nav floatleft secondarytextcolor">
                     <ul class="clearfix">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="#home">Home</a>
                         </li>
                         <li>
-                            <a href="#">Categories</a>
+                            <a href="#categories">Categories</a>
                         </li>
                         <li>
-                            <a href="#">Blog</a>
+                            <a href="#trending">Blog</a>
                         </li>
                         <li>
-                            <a href="#">Contact Us</a>
+                            <a href="#contact">Contact Us</a>
+                        </li>
+                        <li>
+                            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                                <svg id="moon-icon" width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" style="display: inline;">
+                                    <path d="M21.7262 10.7497C21.9056 11.2333 22 11.751 22 12.2785C22 17.7663 17.6896 22.2155 12.3333 22.2155C7.3013 22.2155 3.12579 18.4319 2.1904 13.5651C2.1585 13.3986 2.15242 13.2269 2.1724 13.061C2.19237 12.8951 2.2384 12.7358 2.30878 12.5878C2.37916 12.4397 2.47313 12.3051 2.58764 12.1906C2.70215 12.0761 2.83679 11.9822 2.98485 11.9118C3.1329 11.8415 3.29219 11.7954 3.45805 11.7754C3.62391 11.7554 3.7956 11.7615 3.96213 11.7934C4.12866 11.8253 4.28825 11.8841 4.43389 11.968C4.57954 12.0519 4.70994 12.1609 4.81881 12.2905C5.00037 12.5126 5.11181 12.7753 5.14725 13.0531C5.18269 13.3308 5.13963 13.6121 5.02237 13.8694C4.9051 14.1268 4.71879 14.3524 4.47957 14.5306C4.24036 14.7089 3.95471 14.8362 3.64573 14.8986C5.08779 19.3491 8.35821 21.0825 12.3333 21.0825C16.9238 21.0825 20.6558 17.228 20.8143 12.5511C20.8349 12.2472 20.8115 11.9427 20.7454 11.6491C20.6793 11.3556 20.5705 11.0754 20.4243 10.8206C20.2782 10.5658 20.0967 10.3382 19.8876 10.1465C19.6785 9.95471 19.444 9.80058 19.1913 9.68903C19.0601 9.63351 18.9309 9.57864 18.8049 9.52445C18.4239 9.36647 18.0125 9.25595 17.5855 9.19927C17.1585 9.14259 16.7212 9.14089 16.2909 9.19426C14.7176 9.38792 13.2505 10.2227 12.2282 11.5165C11.2058 12.8103 10.597 14.4716 10.5186 16.1979C10.4371 17.9702 11.0253 19.7408 12.1884 21.1465C13.3514 22.5522 14.9961 23.4735 16.7909 23.774C16.9839 23.8068 17.1783 23.8242 17.3719 23.8258C18.2372 23.8258 19.0792 23.636 19.8519 23.2661C20.6246 22.8963 21.3129 22.3555 21.8741 21.676C22.4352 20.9965 22.8596 20.1919 23.1256 19.3093C23.3917 18.4266 23.4965 17.4801 23.4339 16.5298C23.3713 15.5794 23.1424 14.6521 22.7634 13.7915C22.3844 12.9309 21.8647 12.148 21.2325 11.48C20.6003 10.812 19.8653 10.2642 19.0601 9.8703C19.4674 8.78347 19.7225 7.64797 19.8153 6.49527C19.9082 5.34257 19.8378 4.18433 19.6083 3.0681C19.3788 1.95187 18.9922 0.902256 18.4717 0H18.2125C14.7351 0.443093 11.6033 2.19323 9.17604 4.88785C6.74878 7.58248 5.15835 10.9631 4.54226 14.6521C4.47... [truncated]
+                                </svg>
+                                <svg id="sun-icon" width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                                    <path d="M12 17.5C14.4853 17.5 16.5 15.4853 16.5 13C16.5 10.5147 14.4853 8.5 12 8.5C9.51472 8.5 7.5 10.5147 7.5 13C7.5 15.4853 9.51472 17.5 12 17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 2.5V3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 22.5V21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.5 13H3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M20.5 13H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18.364 19.364L17.657 18.657" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.34301 7.34301L5.63601 6.63601" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18.364 6.63601L17.657 7.34301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.34301 18.657L5.63601 19.364" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -41,7 +61,7 @@
 
         <div id="body">
             <!--hero section-->
-            <div class="hero clearfix">
+            <div id="home" class="hero clearfix">
                 <div class="CTA col-50 floatleft">
                     <h2 class="herotext">
                         Discover your Next Great Read :
@@ -54,10 +74,10 @@
                     <div class="explore">
                         <ul>
                             <li>
-                                <a href="#">Explore</a>
+                                <a href="#categories" class="explore-btn">Explore</a>
                             </li>
                             <li>
-                                <a href="#">Our App</a>
+                                <a href="#app-download" class="explore-btn app-btn-hero" id="ourAppButton">Our App</a>
                             </li>
                         </ul>                                                
                     </div>
@@ -86,62 +106,62 @@
                 </div>
             </div>
             <!--Catagories-->
-            <h2 class="textaligncenter secondarytextcolor cat">Categories</h2>
-            <div class="catagories clearfix">                
+            <h2 id="categories" class="textaligncenter secondarytextcolor cat">Categories</h2>
+            <div class="catagories clearfix">
                 <div class="box floatleft">
                     <div class="boxarea">
-                        <a href="#">Trending Now &gt;</a>
+                        <a href="#trending">Trending Now &gt;</a>
                     </div>
                 </div>
                 <div class="box col-33 floatleft ">
                     <div class="boxarea ">
-                        <a href="#">All Time Best Sellers &gt;</a>
+                        <a href="#bestsellers">All Time Best Sellers &gt;</a>
                     </div>
                 </div>
                 <div class="box floatleft">
                     <div class="boxarea ">
-                        <a href="#">Education &gt;</a>
+                        <a href="#education">Education &gt;</a>
                     </div>
                 </div>
                 <div class="box floatleft">
                     <div class="boxarea">
-                        <a href="#">Novels &gt;</a>
+                        <a href="#novels">Novels &gt;</a>
                     </div>
                 </div>
                 <div class="box floatleft">
                     <div class="boxarea">
-                        <a href="#">Translations &gt;</a>
+                        <a href="#translations">Translations &gt;</a>
                     </div>
                 </div>
                 <div class="box floatleft">
                     <div class="boxarea">
-                        <a href="#">Short Stories &gt;</a>
+                        <a href="#shortstories">Short Stories &gt;</a>
                     </div>
                 </div>
                 <div class="box floatleft">
                     <div class="boxarea">
-                        <a href="#">Sci-fi &gt;</a>
+                        <a href="#scifi">Sci-fi &gt;</a>
                     </div>
                 </div>
                 <div class="box floatleft">
                     <div class="boxarea">
-                        <a href="#">Fiction &gt;</a>
+                        <a href="#fiction">Fiction &gt;</a>
                     </div>
                 </div>
                 <div class="box floatleft">
                     <div class="boxarea">
-                        <a href="#">Poetry &gt;</a>
+                        <a href="#poetry">Poetry &gt;</a>
                     </div>
                 </div>
             </div>
         </div>
             <!--category overview-->
             <!--Trending-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Trending Now</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div>
+            <div id="trending" class="subcat clearfix">
+                <div class="r">
+                    <h3 class="catname"><a href="#categories">Trending Now</a></h3>
+                    <div class="viewmore"> <a href="#trending">View More &rarr;</a></div>
                 </div>
-                <hr>
                 <div class="box2">
                     <img src="Images/mandodari.jpg" alt="mandodari" class="bookimg">
                     <h4 class="h4name">Mandodari</h4>
@@ -150,38 +170,31 @@
                     <h4 class="book-price">LKR 1320.00</h4>
                 </div>
                 <div class="box2">
-                <img src="Images/me liyuma.png" alt="me liyuma nokiyawa giya aya" class="bookimg">
-                <h4 class="h4name">Me Liyuma Nokiyawa Giya Aya</h4>
-                <h5 class="author">Mahela Hettiarachchi</h5>
-                <h6>In Stock</h6>
-                <h4 class="book-price">LKR 750.00</h4>
-            </div>
-            <div class="box2">
-                <img src="Images/Disparue.jpg" alt="disparue" class="bookimg">
-                <h4>Disparue</h4>
-                <h5 class="author">Manjula Senarathne</h5>
-                <h6>In Stock</h6>
-                <h4 class="book-price">LKR 1750.00</h4>
-            </div>
-            <div class="box2">
-                <img src="Images/kameliya.jpg" alt="kameliya" class="bookimg">
-                <h4>Kameliya</h4>
-                <h5 class="author">Virajini Thennakoon</h5>
-                <h6>In Stock</h6>
-                <h4 class="book-price">LKR 975.00</h4>
-            </div>
-            <div class="box2">
-                <img src="Images/kammali mole.jpeg" alt="kammli mole" class="bookimg">
-                <h4>Kammali Mole</h4>
-                <h5 class="author">Chandana Sooriyabandara</h5>
-                <h6>In Stock</h6>
-                <h4 class="book-price">LKR 950.00</h4>
-            </div>
+                    <img src="Images/me liyuma.png" alt="me liyuma nokiyawa giya aya" class="bookimg">
+                    <h4 class="h4name">Me Liyuma Nokiyawa Giya Aya</h4>
+                    <h5 class="author">Mahela Hettiarachchi</h5>
+                    <h6>In Stock</h6>
+                    <h4 class="book-price">LKR 750.00</h4>
                 </div>
+                <div class="box2">
+                    <img src="Images/Disparue.jpg" alt="disparue" class="bookimg">
+                    <h4>Disparue</h4>
+                    <h5 class="author">Manjula Senarathne</h5>
+                    <h6>In Stock</h6>
+                    <h4 class="book-price">LKR 1750.00</h4>
+                </div>
+                <div class="box2">
+                    <img src="Images/kameliya.jpg" alt="kameliya" class="bookimg">
+                    <h4>Kameliya</h4>
+                    <h5 class="author">Virajini Thennakoon</h5>
+                    <h6>In Stock</h6>
+                    <h4 class="book-price">LKR 975.00</h4>
+                </div>
+            </div>
             <!--All time best seller-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Alltime Best Sellers</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="bestsellers" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Alltime Best Sellers</a></h3>
+                    <div class="viewmore"> <a href="#bestsellers">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/Manikkawatha.jpg" alt="manikkawatha" class="bookimg">
                     <h4>Manikkawatha</h4>
@@ -210,18 +223,11 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 1250.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/kantharaye kusuma.png" alt="kantharaye kusuma" class="bookimg">
-                    <h4>Kantharaye Kusum</h4>
-                    <h5 class="author">Ranjith Kuruppu</h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 1200.00</h4>
-                </div>
             </div>
             <!--educational-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Education</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="education" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Education</a></h3>
+                    <div class="viewmore"> <a href="#education">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/com.jpeg" alt="combined" class="bookimg">
                     <h4>GCE A/L Combined Maths Past papers</h4>
@@ -250,18 +256,11 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 650.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/thunmanhandiya.jpg" alt="thunmanhandiya" class="bookimg">
-                    <h4>thunman Handiya</h4>
-                    <h5 class="author">Mahagama Sekara</h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 400.00</h4>
-                </div>
             </div>
             <!--Novels-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Novels</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="novels" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Novels</a></h3>
+                    <div class="viewmore"> <a href="#novels">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/nil katrol.jpg" alt="nil katrol" class="bookimg">
                     <h4>Nil Katrol</h4>
@@ -290,18 +289,11 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 1250.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/KOLAPATA-AS.jpeg" alt="kolapata as" class="bookimg">
-                    <h4>May December Romance</h4>
-                    <h5 class="author">Upul Shantha Sannasgala</h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 1400.00</h4>
-                </div>
             </div>
             <!--Translations-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Translations</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="translations" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Translations</a></h3>
+                    <div class="viewmore"> <a href="#translations">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/Seba-Minisekuge-Katawak.jpg" alt="saba minisekuge kathawak" class="bookimg">
                     <h4>Saba Minisekuge Kathawak</h4>
@@ -330,18 +322,11 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 2250.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/Guru_Geethaya_-___35360.jpg" alt="guru geethaya" class="bookimg">
-                    <h4>Guru Geethaya</h4>
-                    <h5 class="author">Chingiz Aitmatov </h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 500.00</h4>
-                </div>
             </div>
             <!--Short stories-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Short Stories</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="shortstories" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Short Stories</a></h3>
+                    <div class="viewmore"> <a href="#shortstories">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/Book-Item-14-768x538.png" alt="this ata para" class="bookimg">
                     <h4>This Ata Para</h4>
@@ -370,18 +355,11 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 950.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/man chithr.png" alt="man chitrapatiyaka" class="bookimg">
-                    <h4>Man Chitrapatiyaka</h4>
-                    <h5 class="author">Kanchana Priyakantha</h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 900.00</h4>
-                </div>
             </div>
             <!--Sci-fi-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Sci-fi</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="scifi" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Sci-fi</a></h3>
+                    <div class="viewmore"> <a href="#scifi">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/rawana.png" alt="rawana meheyuma" class="bookimg">
                     <h4>Rawana Meheyuma</h4>
@@ -410,18 +388,11 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 1650.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/marayanaya.png" alt="marayanaya" class="bookimg">
-                    <h4>Marayanaya</h4>
-                    <h5 class="author">Susitha Ruwan</h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 1500.00</h4>
-                </div>
             </div>
             <!--Fictions-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Fiction</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="fiction" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Fiction</a></h3>
+                    <div class="viewmore"> <a href="#fiction">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/venus.png" alt="venus" class="bookimg">
                     <h4>Venus</h4>
@@ -450,18 +421,11 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 950.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/wikinee.png" alt="wikinee AWasan" class="bookimg">
-                    <h4>Wikinee Awasan</h4>
-                    <h5 class="author">Jinidu Padma Sri Bandara</h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 1100.00</h4>
-                </div>
             </div>
             <!--poetry-->
-            <div class="subcat clearfix">
-                <div class="r"><h3 class="catname">Poetry</h3>
-                    <div class="viewmore"> <a>View More &rarr;</a></div></div>
+            <div id="poetry" class="subcat clearfix">
+                <div class="r"><h3 class="catname"><a href="#categories">Poetry</a></h3>
+                    <div class="viewmore"> <a href="#poetry">View More &rarr;</a></div></div>
                 <div class="box2">
                     <img src="Images/saragika.jpg" alt="saragika gaswala malanika path" class="bookimg">
                     <h4>Saragika Gaswala Malanika Path</h4>
@@ -490,13 +454,6 @@
                     <h6>In Stock</h6>
                     <h4 class="book-price">LKR 550.00</h4>
                 </div>
-                <div class="box2">
-                    <img src="Images/roopawatharana.jpeg" alt="roopawatharana" class="bookimg">
-                    <h4>Roopawatharana</h4>
-                    <h5 class="author">Panindu Widhane</h5>
-                    <h6>In Stock</h6>
-                    <h4 class="book-price">LKR 550.00</h4>
-                </div>
             </div>
 
             <!--payments-->
@@ -512,69 +469,151 @@
                 </div>
             </div>
             <!--Contact us-->
-            <div class="clearfix">
-                <div class="cu">
-                    <div class="contact">
-                    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-                    <!-- Created with Inkscape (http://www.inkscape.org/) -->
-                    
-                    <svg
-                       version="1.1"
-                       id="svg453"
-                       xml:space="preserve"
-                       width="2em"
-                       height="2em"
-                       viewBox="0 0 32 32"
-                       margin-left="1em"
-                       xmlns="http://www.w3.org/2000/svg"
-                       xmlns:svg="http://www.w3.org/2000/svg"><defs
-                         id="defs457"><clipPath
-                           clipPathUnits="userSpaceOnUse"
-                           id="clipPath467"><path
-                             d="M 0,24 H 24 V 0 H 0 Z"
-                             id="path465" /></clipPath></defs><g
-                         id="g459"
-                         transform="matrix(1.3333333,0,0,-1.3333333,0,32)"><g
-                           id="g461"><g
-                             id="g463"
-                             clip-path="url(#clipPath467)"><g
-                               id="g469"
-                               transform="translate(17.6133,9.7383)"><path
-                                 d="m 0,0 -3.176,-3.176 c -3.624,1.384 -6.298,3.948 -7.875,7.875 l 3.176,3.176 -4.851,4.851 -2.464,-2.464 c -0.966,-0.964 -1.423,-2.235 -1.423,-3.5 0,-7 9,-15.5 15.5,-15.5 1.265,0 2.536,0.458 3.5,1.423 l 2.464,2.463 z"
-                                 style="fill:none;stroke:#2c3e50;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-                                 id="path471" /></g><g
-                               id="g473"
-                               transform="translate(23,14)"><path
-                                 d="M 0,0 C 0,4.971 -4.029,9 -9,9"
-                                 style="fill:none;stroke:#2c3e50;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-                                 id="path475" /></g><g
-                               id="g477"
-                               transform="translate(19,14)"><path
-                                 d="M 0,0 C 0,2.761 -2.239,5 -5,5"
-                                 style="fill:none;stroke:#2c3e50;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-                                 id="path479" /></g></g></g></g></svg>
+            <div id="contact" class="contact-section">
+                <div class="contact-container">
+                    <div class="contact-header">
+                        <h2 class="contact-title">Get In Touch</h2>
+                        <p class="contact-subtitle">Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
                     </div>
-                    <p class="phone"><a href="#">0999 888 777</a></p>
-                </div>
-            
-            <!--social media-->
-            <div class="social media">
-                <a href="https://web.facebook.com/"><svg class="Icons" width="24px" height="24px" fill="#2c3e50"viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><title>Facebook icon</title><path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"/></svg></a>
-                <a href="https://www.instagram.com/"><svg width="24px" height="24px" version="1.1" class="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                    viewBox="0 0 32 32" xml:space="preserve">
-                    <style type="text/css">
-                        .st0{fill:none;stroke:#2c3e50;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-                        .st1{fill:none;stroke:#2c3e50;stroke-width:2;}
-                        .st2{fill:none;stroke:#2c3e50;stroke-width:2;stroke-miterlimit:10;}
-                    </style>
-                    <path class="st0" d="M23,31H9c-4.4,0-8-3.6-8-8V9c0-4.4,3.6-8,8-8h14c4.4,0,8,3.6,8,8v14C31,27.4,27.4,31,23,31z"/>
-                    <circle class="st0" cx="16" cy="16" r="7"/>
-                    <circle class="st0" cx="24" cy="7" r="1"/>
-                </svg></a>
-                <a href="https://x.com/"><svg class="Icons" fill="#2c3e50" width="24px" height="24px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zM14.116 6.01v3.919l1.88 1.963V6.009h-1.88zM6.01 7.992l7.638 7.723c-.121.129-.245.256-.37.381l-7.268 7.35h3.67c.155-.003.312.01.467-.01.272-.003.543.005.814-.003.314-.32.622-.646.934-.97l2.677-2.795c.473-.5.955-.993 1.425-1.493.22.218.432.448.648.672.973 1.014 1.942 2.032 2.915 3.044.495.513.984 1.03 1.48 1.542.272.01.546-.002.82.006.096.013.195.007.294.007h3.83l-.69-.696-6.772-6.846c-.052-.066-.114-.127-.172-.189.237-.246.48-.491.723-.734 2.304-2.328 4.605-4.66 6.91-6.99h-4.938c-.713.744-1.425 1.489-2.14 2.23-.967 1.012-1.935 2.028-2.906 3.037-1.677-1.76-3.361-3.511-5.038-5.266H6.01zM16 19.53h.002c-.004 1.967-.004 3.933-.004 5.9h1.89c0-1.308.004-2.613 0-3.92-.627-.661-1.262-1.317-1.888-1.98z"/></svg></a>
+                    
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L10.89 13.26C11.56 13.72 12.44 13.72 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="info-text">
+                                    <h4>Email</h4>
+                                    <p>info@bookcase.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="info-text">
+                                    <h4>Phone</h4>
+                                    <p>0999 888 777</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="info-text">
+                                    <h4>Location</h4>
+                                    <p>Colombo, Sri Lanka</p>
+                                </div>
+                            </div>
+                            
+                            <div class="social-section">
+                                <h4 class="social-title">Follow Us</h4>
+                                <div class="social-links">
+                                    <a href="https://web.facebook.com/" class="social-link facebook" aria-label="Facebook">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/" class="social-link instagram" aria-label="Instagram">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://x.com/" class="social-link twitter" aria-label="Twitter">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.linkedin.com/" class="social-link linkedin" aria-label="LinkedIn">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div id="app-download" class="app-download-box">
+                                <div class="app-icon">
+                                    <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 17L12 22L22 17" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 12L12 17L22 12" stroke="#667eea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h4 class="app-title">Download Our App</h4>
+                                <p class="app-text">Get the best reading experience</p>
+                                <div class="app-buttons">
+                                    <a href="https://play.google.com/store" target="_blank" class="app-btn playstore">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+                                        </svg>
+                                        <span>Play Store</span>
+                                    </a>
+                                    <a href="https://www.apple.com/app-store/" target="_blank" class="app-btn appstore">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                                        </svg>
+                                        <span>App Store</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+94 XX XXX XXXX" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-icon">
+                                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </button>
+                            
+                            <div class="books-animation">
+                                <div class="floating-book book1">📕</div>
+                                <div class="floating-book book2">📗</div>
+                                <div class="floating-book book3">📘</div>
+                                <div class="floating-book book4">📙</div>
+                                <div class="floating-book book5">📚</div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-            
 
         <div id="footer clearfix">           
             <div class="rights textaligncenter">

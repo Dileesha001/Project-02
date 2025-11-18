@@ -1,0 +1,117 @@
+body.dark-mode {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+body.dark-mode #wrapper {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+body.dark-mode .secondarybtcolor {
+    background: #3c3c3c;
+    color: #ffffff;
+}
+
+body.dark-mode .secondarytextcolor {
+    color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
+    color: #ffffff;
+}
+
+body.dark-mode .herotext {
+    color: #ffffff;
+}
+
+body.dark-mode .herosub {
+    color: #f0f0f0;
+}
+
+body.dark-mode .bs {
+    color: #ffc371;
+}
+
+body.dark-mode .mn {
+    color: #ffffff;
+}
+
+body.dark-mode .mrm {
+    color: #f0f0f0;
+}
+
+body.dark-mode .cat {
+    color: #ffc371;
+}
+
+body.dark-mode .box {
+    background: #3c3c3c;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+body.dark-mode .box:hover {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+body.dark-mode .catname a {
+    color: #ffc371;
+}
+
+body.dark-mode .box2 {
+    background: #3c3c3c;
+    color: #ffffff;
+}
+
+body.dark-mode .book-price {
+    color: #ffc371;
+}
+
+body.dark-mode .contact-section {
+    background: #1a1a1a;
+}
+
+body.dark-mode .contact-title {
+    color: #ffc371;
+}
+
+body.dark-mode .contact-subtitle {
+    color: #f0f0f0;
+}
+
+body.dark-mode .info-item {
+    background: #3c3c3c;
+}
+
+body.dark-mode .info-text h4,
+body.dark-mode .info-text p {
+    color: #ffffff;
+}
+
+body.dark-mode .contact-form {
+    background: #2d2d2d;
+}
+
+body.dark-mode .form-group label {
+    color: #ffffff;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #3c3c3c;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    background: #4d4d4d;
+    border-color: #ffc371;
+}
