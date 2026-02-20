@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
+    <link rel="stylesheet" href="../CSS/dark-mode.css">
+    <script src="../JS/script.js" defer></script>
+    <title>Poetry - Under Construction - BOOKCASE</title>
+    <style>
+        .construction-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+            text-align: center;
+        }
+
+        .construction-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .construction-icon {
+            font-size: 120px;
+            margin-bottom: 1em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .construction-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5em;
+        }
+
+        .construction-subtitle {
+            font-size: 1.3em;
+            color: #764ba2;
+            margin-bottom: 1em;
+            font-weight: 600;
+        }
+
+        .construction-text {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2em;
+        }
+
+        .construction-graphics {
+            margin: 2em 0;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            flex-wrap: wrap;
+        }
+
+        .graphic-item {
+            font-size: 80px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .graphic-item:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .graphic-item:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1em 2.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 2em;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2, #ff6b9d);
+            animation: progress 2s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 0%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper" class="secondrybtcolor">
+        <!--Header-->
+        <div id="header">
+            <div class="headerarea clearfix">
+                <div class="logo floatleft">
+                    <a href="../index.html">
+                        <img height="32" src="../Images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="nav floatleft secondarytextcolor">
+                    <ul class="clearfix">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#categories">Categories</a></li>
+                        <li><a href="../index.html#trending">Blog</a></li>
+                        <li><a href="../index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="login floatright secondarytextcolor">
+                    <ul class="clearfix">
+                        <li>
+                            <button id="dark-mode-toggle-small" class="dark-mode-small" aria-label="Toggle dark mode">
+                                <div class="dark-mode-thumb-small">
+                                    <svg id="moon-icon-small" width="14px" height="14px" viewBox="0 0 24 24" fill="currentColor" style="display: inline;">
+                                        <path d="M21.7262 10.7497C21.9056 11.2333 22 11.751 22 12.2785C22 17.7663 17.6896 22.2155 12.3333 22.2155C7.3013 22.2155 3.12579 18.4319 2.1904 13.5651C2.1585 13.3986 2.15242 13.2269 2.1724 13.061C2.19237 12.8951 2.2384 12.7358 2.30878 12.5878C2.37916 12.4397 2.47313 12.3051 2.58764 12.1906C2.70215 12.0761 2.83679 11.9822 2.98485 11.9118C3.1329 11.8415 3.29219 11.7954 3.45805 11.7754C3.62391 11.7554 3.7956 11.7615 3.96213 11.7934C4.12866 11.8253 4.28825 11.8841 4.43389 11.968C4.57954 12.0519 4.70994 12.1609 4.81881 12.2905C5.00037 12.5126 5.11181 12.7753 5.14725 13.0531C5.18269 13.3308 5.13963 13.6121 5.02237 13.8694C4.9051 14.1268 4.71879 14.3524 4.47957 14.5306C4.24036 14.7089 3.95471 14.8362 3.64573 14.8986C5.08779 19.3491 8.35821 21.0825 12.3333 21.0825C16.9238 21.0825 20.6558 17.228 20.8143 12.5511C20.8349 12.2472 20.8115 11.9427 20.7454 11.6491C20.6793 11.3556 20.5705 11.0754 20.4243 10.8206C20.2782 10.5658 20.0967 10.3382 19.8876 10.1465C19.6785 9.95471 19.444 9.80058 19.1913 9.68903C19.0601 9.63351 18.9309 9.57864 18.8049 9.52445C18.4239 9.36647 18.0125 9.25595 17.5855 9.19927C17.1585 9.14259 16.7212 9.14089 16.2909 9.19426C14.7176 9.38792 13.2505 10.2227 12.2282 11.5165C11.2058 12.8103 10.597 14.4716 10.5186 16.1979C10.4371 17.9702 11.0253 19.7408 12.1884 21.1465C13.3514 22.5522 14.9961 23.4735 16.7909 23.774C16.9839 23.8068 17.1783 23.8242 17.3719 23.8258C18.2372 23.8258 19.0792 23.636 19.8519 23.2661C20.6246 22.8963 21.3129 22.3555 21.8741 21.676C22.4352 20.9965 22.8596 20.1919 23.1256 19.3093C23.3917 18.4266 23.4965 17.4801 23.4339 16.5298C23.3713 15.5794 23.1424 14.6521 22.7634 13.7915C22.3844 12.9309 21.8647 12.148 21.2325 11.48C20.6003 10.812 19.8653 10.2642 19.0601 9.8703C19.4674 8.78347 19.7225 7.64797 19.8153 6.49527C19.9082 5.34257 19.8378 4.18433 19.6083 3.0681C19.3788 1.95187 18.9922 0.902256 18.4717 0H18.2125C14.7351 0.443093 11.6033 2.19323 9.17604 4.88785C6.74878 7.58248 5.15835 10.9631 4.54226 14.6521C4.47 18.4319 5.15835 10.9631 4.54226 14.6521C4.47 18.4319 5.5 18 5.5 18C5.5 18 3 14 3 10C3 5 6 2 12 2C18 2 21 5 21 10.7785Z"/>
+                                    </svg>
+                                    <svg id="sun-icon-small" width="14px" height="14px" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                                        <path d="M12 17.5C14.4853 17.5 16.5 15.4853 16.5 13C16.5 10.5147 14.4853 8.5 12 8.5C9.51472 8.5 7.5 10.5147 7.5 13C7.5 15.4853 9.51472 17.5 12 17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 2.5V3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 22.5V21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.5 13H3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M20.5 13H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.364 19.364L17.657 18.657" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.34301 7.34301L5.63601 6.63601" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.364 6.63601L17.657 7.34301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.34301 18.657L5.63601 19.364" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
+                        <li><a href="#" class="secondarybtcolor sign">Sign Up</a></li>
+                        <li><a href="#" class="secondarybtcolor log">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="body">
+            <div class="construction-container">
+                <div class="construction-content">
+                    <div class="construction-icon">🚧</div>
+                    <h1 class="construction-title">Poetry</h1>
+                    <p class="construction-subtitle">Page Under Construction</p>
+                    <p class="construction-text">
+                        We're working hard to bring you the best collection of poetry! Our team is curating carefully selected titles just for you. Check back soon!
+                    </p>
+                    <div class="construction-graphics">
+                        <div class="graphic-item">🎭</div>
+                        <div class="graphic-item">✨</div>
+                        <div class="graphic-item">⏳</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p style="margin-top: 2em; color: #999;">Coming Soon...</p>
+                    <a href="../index.html" class="back-button">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer clearfix">
+            <div class="rights textaligncenter">
+                <p>Copyright © 2024- BOOKCASE (PVT)LTD. - All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
