@@ -41,7 +41,7 @@ body{
 a{cursor: pointer; text-decoration: none; transition: all 0.3s ease;}
 /* Color Scheme */
 .primarycolor{background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);}
-.secondarybtcolor{background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);}
+.secondarybtcolor{background: rgba(255, 255, 255, 0.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);}
 .secondarytextcolor{color: #667eea;}
 .secondarytextcolor2{color: #ff6b9d;}
 .secondarycolor{color: #ffffff;}
@@ -120,6 +120,7 @@ h6{font-size: 0.8rem; font-weight: 700; color: #00ff88; text-transform: uppercas
     background: rgba(255, 255, 255, 0.15);
     color: #ffffff;
     font-weight: 600;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -652,6 +653,7 @@ h6{font-size: 0.8rem; font-weight: 700; color: #00ff88; text-transform: uppercas
     justify-content: center;
     transition: all 0.3s ease;
     color: #ffffff;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 .social-link:hover{
@@ -974,59 +976,153 @@ h6{font-size: 0.8rem; font-weight: 700; color: #00ff88; text-transform: uppercas
     letter-spacing: 0.5px;
 }
 
-/* Dark Mode Toggle Styles */
+/* ========== Radical Dark Mode Toggle ========== */
 #dark-mode-toggle {
-    background: transparent;
+    --_toggle-width: 60px;
+    --_toggle-height: 30px;
+    --_thumb-size: 22px;
+    --_thumb-padding: 4px;
+    --_animation-speed: 0.4s;
+
+    appearance: none;
+    -webkit-appearance: none;
+    background: #434c5e;
+    border-radius: var(--_toggle-height);
+    width: var(--_toggle-width);
+    height: var(--_toggle-height);
+    padding: 0;
+    margin: 0;
     border: none;
     cursor: pointer;
-    padding: 0.5em;
+    position: relative;
+    transition: background var(--_animation-speed) ease-in-out;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.dark-mode-thumb {
+    width: var(--_thumb-size);
+    height: var(--_thumb-size);
+    background: #eceff4;
+    border-radius: 50%;
+    position: absolute;
+    top: var(--_thumb-padding);
+    left: var(--_thumb-padding);
+    transition: all var(--_animation-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
-    -webkit-tap-highlight-color: transparent; /* Prevent blue highlight on tap */
-}
-
-#dark-mode-toggle:hover {
-    transform: scale(1.1);
+    overflow: hidden; /* Hide the icon that is rotated out of view */
 }
 
 #dark-mode-toggle svg {
-    width: 24px;
-    height: 24px;
-    fill: #ffffff; /* Default icon color for light mode (on dark header) */
-    transition: fill 0.3s ease;
+    width: 70%;
+    height: 70%;
+    transition: all var(--_animation-speed) ease-in-out;
 }
 
-body.dark-mode #dark-mode-toggle svg {
-    fill: #ffc371; /* Icon color in dark mode */
+#dark-mode-toggle #sun-icon {
+    transform: rotate(90deg);
+    display: block !important;
+}
+#dark-mode-toggle #moon-icon {
+    transform: rotate(0deg);
+    display: block !important;
 }
 
 
-/* Dark Mode Toggle Styles */
-#dark-mode-toggle {
-    background: transparent;
+/* Dark Mode Active State */
+body.dark-mode #dark-mode-toggle {
+    background: #88c0d0;
+}
+
+body.dark-mode .dark-mode-thumb {
+    transform: translateX(calc(var(--_toggle-width) - var(--_thumb-size) - (2 * var(--_thumb-padding))));
+    background: #3b4252;
+}
+
+body.dark-mode #dark-mode-toggle #sun-icon {
+    transform: rotate(0deg);
+    fill: #ebcb8b;
+}
+
+body.dark-mode #dark-mode-toggle #moon-icon {
+    transform: rotate(-90deg);
+}
+
+/* Original, simplified styles to be removed */
+/* body.dark-mode #dark-mode-toggle svg {
+    fill: #ffc371;
+} */
+
+/* ========== Small Dark Mode Toggle ========== */
+#dark-mode-toggle-small {
+    --_toggle-width: 40px;
+    --_toggle-height: 20px;
+    --_thumb-size: 14px;
+    --_thumb-padding: 3px;
+    --_animation-speed: 0.4s;
+
+    appearance: none;
+    -webkit-appearance: none;
+    background: #434c5e;
+    border-radius: var(--_toggle-height);
+    width: var(--_toggle-width);
+    height: var(--_toggle-height);
+    padding: 0;
+    margin: 0;
     border: none;
     cursor: pointer;
-    padding: 0.5em;
+    position: relative;
+    transition: background var(--_animation-speed) ease-in-out;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.dark-mode-thumb-small {
+    width: var(--_thumb-size);
+    height: var(--_thumb-size);
+    background: #eceff4;
+    border-radius: 50%;
+    position: absolute;
+    top: var(--_thumb-padding);
+    left: var(--_thumb-padding);
+    transition: all var(--_animation-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
-    -webkit-tap-highlight-color: transparent; /* Prevent blue highlight on tap */
+    overflow: hidden;
 }
 
-#dark-mode-toggle:hover {
-    transform: scale(1.1);
+#dark-mode-toggle-small svg {
+    width: 70%;
+    height: 70%;
+    transition: all var(--_animation-speed) ease-in-out;
 }
 
-#dark-mode-toggle svg {
-    width: 24px;
-    height: 24px;
-    fill: #ffffff; /* Default icon color for light mode (on dark header) */
-    transition: fill 0.3s ease;
+#dark-mode-toggle-small #sun-icon-small {
+    transform: rotate(90deg);
+    display: block !important;
 }
 
-body.dark-mode #dark-mode-toggle svg {
-    fill: #ffc371; /* Icon color in dark mode */
+#dark-mode-toggle-small #moon-icon-small {
+    transform: rotate(0deg);
+    display: block !important;
+}
+
+/* Dark Mode Active State for Small Toggle */
+body.dark-mode #dark-mode-toggle-small {
+    background: #88c0d0;
+}
+
+body.dark-mode .dark-mode-thumb-small {
+    transform: translateX(calc(var(--_toggle-width) - var(--_thumb-size) - (2 * var(--_thumb-padding))));
+    background: #3b4252;
+}
+
+body.dark-mode #dark-mode-toggle-small #sun-icon-small {
+    transform: rotate(0deg);
+    fill: #ebcb8b;
+}
+
+body.dark-mode #dark-mode-toggle-small #moon-icon-small {
+    transform: rotate(-90deg);
 }

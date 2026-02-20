@@ -64,22 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Navigation setup complete');
 
     // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeToggleSmall = document.getElementById('dark-mode-toggle-small');
     const body = document.body;
-    const moonIcon = document.getElementById('moon-icon');
-    const sunIcon = document.getElementById('sun-icon');
+    const moonIconSmall = document.getElementById('moon-icon-small');
+    const sunIconSmall = document.getElementById('sun-icon-small');
 
     // Function to set the theme
     function setTheme(isDarkMode) {
         if (isDarkMode) {
             body.classList.add('dark-mode');
-            if (moonIcon) moonIcon.style.display = 'none';
-            if (sunIcon) sunIcon.style.display = 'inline';
+            if (moonIconSmall) moonIconSmall.style.display = 'none';
+            if (sunIconSmall) sunIconSmall.style.display = 'inline';
             localStorage.setItem('darkMode', 'enabled');
         } else {
             body.classList.remove('dark-mode');
-            if (moonIcon) moonIcon.style.display = 'inline';
-            if (sunIcon) sunIcon.style.display = 'none';
+            if (moonIconSmall) moonIconSmall.style.display = 'inline';
+            if (sunIconSmall) sunIconSmall.style.display = 'none';
             localStorage.setItem('darkMode', 'disabled');
         }
     }
@@ -91,9 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTheme(false); // Default to light mode
     }
 
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
+    if (darkModeToggleSmall) {
+        darkModeToggleSmall.addEventListener('click', () => {
             setTheme(!body.classList.contains('dark-mode'));
         });
     }
+
+
 });
