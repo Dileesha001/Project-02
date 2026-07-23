@@ -21,3 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 logs/
 server/logs/
+
+# Mobile App nested repository
+BOOKCASE App/
