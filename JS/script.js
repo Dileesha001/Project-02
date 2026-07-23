@@ -375,21 +375,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
-                showToast('Your cart is empty!', 'info');
-                return;
-            }
-            showToast('Proceeding to Checkout...', 'success');
-            setTimeout(() => {
-                if (cartOverlay) cartOverlay.classList.remove('open');
-                document.body.style.overflow = '';
-                const targetPage = window.location.pathname.includes('/pages/') ? 'checkout.html' : 'pages/checkout.html';
-                window.location.href = targetPage;
-            }, 600);
-        });
-    }
+    // Global Checkout Click Event Handler (Delegated for 100% reliability)
+    document.addEventListener('click', function(e) {
+        const checkoutTarget = e.target.closest('#checkoutBtn, .checkout-btn, .btn-checkout, [data-action="checkout"]');
+        if (checkoutTarget) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (cartOverlay) cartOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+
+            const isSubpage = window.location.pathname.includes('/pages/');
+            const targetPage = isSubpage ? 'checkout.html' : 'pages/checkout.html';
+            window.location.href = targetPage;
+        }
+    });
 
     // Attach event listeners to all Add To Cart buttons on cards
     document.addEventListener('click', function(e) {
