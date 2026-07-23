@@ -381,13 +381,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 showToast('Your cart is empty!', 'info');
                 return;
             }
-            showToast('Thank you! Redirecting to checkout...', 'success');
+            showToast('Proceeding to Checkout...', 'success');
             setTimeout(() => {
-                cart = [];
-                saveCart();
                 if (cartOverlay) cartOverlay.classList.remove('open');
                 document.body.style.overflow = '';
-            }, 1500);
+                const targetPage = window.location.pathname.includes('/pages/') ? 'checkout.html' : 'pages/checkout.html';
+                window.location.href = targetPage;
+            }, 600);
         });
     }
 
